@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Portfolio</title>
+<link rel="stylesheet" href="styles.css">
+<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans|Roboto+Mono&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<!--<div class="header">
+</div>-->
+<div id="topnav" class = "topnav">
+	<!-- <a class="menu-button" href="#" onclick="openTopNav()">&#9776; Menu</a>
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+	<div id="main">
+    <a class = "sidebutton" href="#" onclick="openNav()"><span style="font-size:14px; cursor:pointer">&#9776; Open</a>
+	<a class="active" href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+	<a href="pages/my-projects.html"><i class="fa fa-fw fa-briefcase"></i>My projects</a>
+    <a href="pages/contact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+    <a href="pages/about-me.html"><i class="fa fa-fw fa-user"></i> About me</a>
+    <div class="topnav-right">
+	<a href="pages/fun-page.html"><i class="fa fa-paint-brush"></i> Fun page</a>
+	</div>
+	</div>
+</div>
+
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+   <a class="active" href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+   <a href="pages/my-projects.html"><i class="fa fa-briefcase"></i> My projects</a>
+   <a href="pages/contact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+   <a href="pages/about-me.html"><i class="fa fa-fw fa-user"></i> About me</a>
+</div>
+
+  <div>
+  	<div id="About">
+	<div class="intro">
+    <img class="profile-picture" src="images/profile-picture.jpg"/>
+    <h1>Nana Sokolov</h1>
+    <h3>Junior Web developer</h3>
+    <p class="quote"> Some text about me </p>
+	</div>
+<hr/>
+	<div class="about-grid">
+		<div class="i-am">
+			<h3>I am</h3>
+    		<ul class="about-list">
+    		 <li>An engineer</li>
+    		 <li>A husband</li>
+    		 <li>A lover</li>
+    		</ul>
+    	</div>
+    	<div class="i-like">
+    		<h3>I like to</h3>
+    		<ul class="about-list">
+    			<li>Do a programming</li>
+    			<li>Take care of my honey</li>
+    			<li>Be her everything.</li>
+    		</ul>
+    	</div>
+    </div>
+	</div>
+    <div>
+
+    	<div id="Projects">
+    		<h3 class="project-heading">My Projects</h3>
+    		<p class="quote"> Future projects will be showed here. </p>
+    		<div class="project-grid">
+    			<div class="project-image-wrapper">
+					<h4>Project 1</h4>
+					<img class="project-image" src="images/project-1.jpg"/>
+				</div>
+				<div class="project-image-wrapper">
+					<h4>Project 2</h4>
+					<img class="project-image" src="images/project-2.jpg"/>
+				</div>
+				<div class="project-image-wrapper">
+					<h4>Project 3</h4>
+					<img class="project-image" src="images/project-3.jpg"/>
+				</div>
+				<div class="project-image-wrapper">
+					<h4>Project 4</h4>
+					<img class="project-image" src="images/project-4.jpg"/>
+				</div>
+			</div>
+		</div>
+	</div>
+    </div>
+
+    	<!-- <form id="contact-form" method="post" action="contact-form-hanler">
+			<label for="name">Name</label>
+				<input name="sender-name" type="text" class="form-control" placeholder ="Enter your name.">
+    		<label for="email">Email</label>
+    			<input name="email" type="email" class="form-control" placeholder="Enter your email." required>
+
+    		<label for="message">Message</label>	
+
+    			<textarea name="message" type="text" class="form-control" placeholder="Your message..." rows="4" required></textarea>	
+    		
+    		<div class="submit_buton_wrapper">
+    			<input class = "form-control submit" type="submit" value="Send Message"s>
+    		</div>
+    	</form>
+ -->
+ 		<form class="contact-form-main" id="contact-form" method="post" action="contact-form-hanler"> 
+            <div class="grid-container">
+
+                <div class="grid-item-three"></div>
+                <div id="error-name-message" class="grid-item-three"><p>.</p></div>
+
+                <div class="grid-item-one">Name: </div>
+                <div class="grid-item-two">
+                    <input type="text" id="name" class="form-control" placeholder ="Enter your name." required>
+                </div>
+
+                <div class="grid-item-three"></div>
+                <div id="error-email-message" class="grid-item-three"><p>.</p></div>
+
+                <div class="grid-item-one">Email: </div>  
+                <div class="grid-item-two">
+                    <input type="email" id = "email" class="form-control" placeholder="Enter your email">
+                </div>
+
+                <div class="grid-item-three"></div>
+                <div id="error-msg-message" class="grid-item-three"><p>.</p></div>
+
+                <div class="grid-item-one">Message:</div>
+                <div class="grid-item-two">
+                    <textarea type="text" id="textarea" class="form-control" placeholder="Your message..."  rows="4" required></textarea>
+                </div>        
+            </div>
+
+            <div class="grid-button">
+                    <input class = "buttonOne" type="submit" value="Send Message" id="submit-button">
+            </div>
+        </form>
+
+
+	<footer>
+        <p style="text-align: center">I am sociable!</p>
+        <div class="links">
+            <div>
+                <a href="https://github.com/Nansokolov"><img class="logo" src="images/GitHub-Mark.png" title="My GitHub account" alt="My GitHub account"></a>
+                <a href="https://github.com/Nansokolov"><img class="logo" src="images/linkedin-icon.png" title="My LinkedIn account" alt="My LinkedIn account"></a>
+                <a href="https://facebook.com"><img class="logo" src="images/facebook-logo.png" title="Just a Facebook" alt="Just a Facebook"></a>
+            </div>
+        <div style="color: white">
+        Phone and email:<br>
+        <a href="tel:647-457-9391" style="color: white">+1647-457-9391</a><br>
+        <a href="email:nansokolov@gmail.com" style="color: white">nansokolov@gmail.com</a>
+        </div>
+        <div>
+        <address>
+            You can find me at:<br>
+            77 Huntley St. Toronto,<br>
+            Canada
+        </address>
+        </div>
+        </div> 
+    </footer>
+
+<script src="script.js"></script>
+</body>
+</html>

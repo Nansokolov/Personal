@@ -1,0 +1,49 @@
+	Theory HTML and CSS
+
+	Files
+-Separate words with "-", no spaces, lower cases.
+index.html - the main page
+-have a folders for img, styles, scripts.
+
+	img
+To reference a file in a subdirectory, write the directory name in front of the path, plus a forward slash, e.g. subdirectory/my-image.jpg.
+To link to a target file in the directory above the invoking HTML file, write two dots.
+You can combine these as much as you like, for example ../subdirectory/another-subdirectory/my-image.jpg.
+
+	HTML basics (Hypertext Markup Language) is not a programming language; it is a markup language used to tell your browser how to structure the web pages you visit.
+
+-Tags in HTML are case-insensitive
+There are two important categories of elements in HTML: block-level elements (all the elements after start from new line) and inline elements (go one after another.
+
+
+Block-level elements (may appear only within a <body> element)
+<p> Paragraph
+<address> Contact information.
+<article> Article content.
+<aside> Aside content.
+<detaits> Disclosure widget.
+<dialog> Dialog box.
+<div> Document division.
+<footer> Section or page footer.
+<form> Input form.
+<header> Section or page header.
+<li> list item
+<ol> or <ul> ordered or unordered list
+<table> Table.
+<section> Section of a web page.
+<nav> Contains navigation links
+
+
+<em></em> for italic emphasis.
+<strong></strong> for strong text.
+
+	Grid
+grid – generates a block-level grid
+inline-grid – generates an inline-level grid
+
+	CSS
+
+	Value
+color
+background-color
+
