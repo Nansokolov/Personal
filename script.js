@@ -88,7 +88,7 @@ function closeTopNav() {
 }
 
 function submitfunc(){
-  alert("Unfortunatelly, form doesnot work currently (due to hosting on GitHub). Please try to reach me by phone or email.");
+  alert("Unfortunatelly, form does not work currently (due to hosting on GitHub). Please try to reach me by phone or email.");
 }
 
 
