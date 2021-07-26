@@ -8,9 +8,6 @@ body{
 	margin: 0;
 }
 
-footer{
-	
-}
 
 h1, h2, h3, h4{
 	font-family: 'Roboto Mono', monospace;
@@ -145,7 +142,7 @@ address{
 
 .about-grid{
 	display: grid;
-	grid-template-columns: 50% 50%;
+	grid-template-columns: 33% 33% 34%;
 }
 
 @media(max-width: 400px){
@@ -179,9 +176,6 @@ address{
 @media(max-width: 650px){
 	.project-grid{
 		grid-template-columns: 100%;
-	}
-	.sidebutton{
-
 	}
 }
 

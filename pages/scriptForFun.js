@@ -38,3 +38,8 @@
                               'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
       }
+
+      function submitfunc(){
+        alert("The Form has been Submitted.");
+      }
+   

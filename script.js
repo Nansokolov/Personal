@@ -87,5 +87,8 @@ function closeTopNav() {
   document.getElementById("main").style.marginLeft= "0";
 }
 
+function submitfunc(){
+  alert("Unfortunatelly, form doesnot work currently (due to hosting on GitHub). Please try to reach me by phone or email.");
+}
 
 
