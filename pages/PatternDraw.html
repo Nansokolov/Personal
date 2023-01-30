@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Draw your pattern!</title>
+    </head>
+
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        #mainBody{
+            background-color: bisque;
+            height: 100vh;
+            width: 100vw;
+            padding: 10%;
+            overflow: scroll;
+        }
+        .PatternOutline{
+            margin-top: 20px;
+            width: fit-content;
+            border: 1px solid black;
+            display: flex;
+            height: auto;
+        }
+        input{
+            margin-right: 10px;
+        }
+        .flexible{
+            flex: 1;
+        }
+        #mainBody .square{
+            border: 1px solid lightgrey;
+            width: 20px;
+            height: 20px;
+        }
+        .square{
+            background-color: white;
+            border: 1px solid lightgrey;
+            cursor: pointer;
+            padding: 0;
+            overflow: hidden;
+        }
+        select{
+            width:80px;
+        }
+        .zoom50{width: 10px !important;height: 10px !important;}
+        .zoom75{width: 15px !important;height: 15px !important;}
+        .zoom100{width: 20px !important;height: 20px !important;}
+        .zoom125{width: 25px !important;height: 25px !important;}
+        .zoom150{width: 30px !important;height: 30px !important;}
+        .zoom200{width: 40px !important;height: 40px !important;}
+    </style>
+    
+    <body>
+        <div id="mainBody">
+            <label for="color">Your color:</label>
+            <input type="color" id="colorpicker" value="#0000ff">
+            <label for="height">Rows:</label>
+            <input type="text" name="height" id="height" value="7">
+            <label for="width">Columns:</label>
+            <input type="text" name="width" id="width" value="30">
+            <label for="zoom">Zoom(%):</label>
+            <select onchange="changeZoom()" name="zoom" id="zoom" value="7">
+                <option value="100">100%</option>
+                <option value="50">50%</option>
+                <option value="75">75%</option>
+                <option value="100">100%</option>
+                <option value="125">125%</option>
+                <option value="150">150%</option>
+                <option value="200">200%</option>
+            </select>
+            <button type="button" onclick="drawOutline()">Draw (Clear)</button>
+            <div class="PatternOutline"></div>
+            <div class="PatternOutlin2e"></div>
+        </div>
+    </body>    
+
+    <script>
+        function drawOutline(){
+            let mainDIV = document.querySelector("#mainBody > div.PatternOutline")
+            mainDIV.innerHTML='';
+            const rows = document.querySelector("#height").value;
+            const columns = document.querySelector("#width").value;
+        
+            for(let i = 0; i<columns;i++){
+    
+                let row = document.createElement("DIV");
+                let square;
+                row.setAttribute("class","column");
+                for(let j = 0; j<rows;j++){
+                    square = document.createElement("DIV");
+                    square.setAttribute("class","square zoom"+document.querySelector("#zoom").value);
+                    square.setAttribute("onclick","drawColor(this)");
+                    row.appendChild(square);
+                }
+                mainDIV.appendChild(row);
+            }
+        }
+        function changeZoom(){
+            const elemArr = document.getElementsByClassName('square')
+            for(let i = 0; i<elemArr.length;i++){
+                elemArr[i].className = 'square zoom'+document.querySelector("#zoom").value;
+            }
+        }
+        function drawColor(elem){
+            const color = document.querySelector("#colorpicker").value;
+            if(elem.style.backgroundColor == hexToRgb(color)){
+                elem.style.backgroundColor="white";
+            }else{
+                elem.style.backgroundColor=color;
+            }
+        }
+
+        function hexToRgb(hex) {
+            // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
+            var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+            hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+                return r + r + g + g + b + b;
+            });
+
+            var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? "rgb(" + [
+                parseInt(result[1], 16),
+                parseInt(result[2], 16),
+                parseInt(result[3], 16)
+            ].join(', ') + ")" : null;
+        }
+        drawOutline();
+    </script>
+</html>
