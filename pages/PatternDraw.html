@@ -9,10 +9,13 @@
             padding: 0;
             margin: 0;
         }
+        .editCursor{
+            cursor: cell;
+        }
         #mainBody{
             background-color: bisque;
             height: 100vh;
-            width: 100vw;
+            width: 80%;
             padding: 10%;
             overflow: scroll;
         }
@@ -35,7 +38,7 @@
             height: 20px;
         }
         .square{
-            background-color: white;
+            background-color: rgb(255 255 255);
             border: 1px solid lightgrey;
             cursor: pointer;
             padding: 0;
@@ -43,6 +46,13 @@
         }
         select{
             width:80px;
+        }
+
+        input[type=color]{
+            height: 20px;
+        }
+        button{
+            height: 20px;
         }
         .zoom50{width: 10px !important;height: 10px !important;}
         .zoom75{width: 15px !important;height: 15px !important;}
@@ -56,6 +66,7 @@
         <div id="mainBody">
             <label for="color">Your color:</label>
             <input type="color" id="colorpicker" value="#0000ff">
+            <button type="button" id="copyColor" onclick="copyColor(this)">Copy Color</button>
             <label for="height">Rows:</label>
             <input type="text" name="height" id="height" value="7">
             <label for="width">Columns:</label>
@@ -105,11 +116,14 @@
         }
         function drawColor(elem){
             const color = document.querySelector("#colorpicker").value;
-            if(elem.style.backgroundColor == hexToRgb(color)){
-                elem.style.backgroundColor="white";
-            }else{
-                elem.style.backgroundColor=color;
+            if(document.querySelector('#copyColor').style.backgroundColor!="grey"){
+                if(elem.style.backgroundColor == hexToRgb(color)){
+                    elem.style.backgroundColor="rgb(255 255 255)";
+                }else{
+                    elem.style.backgroundColor=color;
+                }
             }
+
         }
 
         function hexToRgb(hex) {
@@ -126,6 +140,50 @@
                 parseInt(result[3], 16)
             ].join(', ') + ")" : null;
         }
+
+        function copyColor(elem){
+            
+            elem.style.backgroundColor="grey";
+            const body = document.getElementsByTagName('body')[0];
+            body.className = 'editCursor';
+            //body.addEventListener('click',checkTheColor());
+
+            document.onclick=function(event){
+                if(event.target.id!="copyColor"){
+                    
+                    //  console.log(event.target.style.backgroundColor);
+                    let rgb = event.target.style.backgroundColor;
+                    console.log(rgb)
+                    document.querySelector("#colorpicker").value = RGBToHex(rgb.replaceAll(' ',''));
+                    document.onclick='';
+                    elem.style.backgroundColor="";
+                    body.className = '';
+                }
+                event.stopPropagation();  
+            }
+        }
+
+        function RGBToHex(rgb) {
+            // Choose correct separator
+            let sep = rgb.indexOf(",") > -1 ? "," : " ";
+            // Turn "rgb(r,g,b)" into [r,g,b]
+            rgb = rgb.substr(4).split(")")[0].split(sep);
+                console.log(rgb)
+            let r = (+rgb[0]).toString(16),
+                g = (+rgb[1]).toString(16),
+                b = (+rgb[2]).toString(16);
+
+            if (r.length == 1)
+                r = "0" + r;
+            if (g.length == 1)
+                g = "0" + g;
+            if (b.length == 1)
+                b = "0" + b;
+
+            return "#" + r + g + b;
+        }
+
+        
         drawOutline();
     </script>
 </html>
