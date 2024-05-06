@@ -1,111 +1,142 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Contacts</title>
-<link rel="stylesheet" href="../styles.css">
-<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans|Roboto+Mono&display=swap">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contacts</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans|Roboto+Mono&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
-<!--<div class="header">
+    <!--<div class="header">
 </div>-->
-<div id="topnav" class = "topnav">
-    <div id="main">
-    <a class = "sidebutton" href="#" onclick="openNav()"><span style="font-size:14px; cursor:pointer">&#9776; Open</a>
-    <a href="../index.html"><i class="fa fa-fw fa-home" onclick="openNav()"></i> Home</a>
-    <a href="my-projects.html"><i class="fa fa-briefcase"></i> My projects</a>
-    <a class="active" href="contact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a>
-    <a href="about-me.html"><i class="fa fa-fw fa-user"></i> About me</a>
-    <div class="topnav-right">
-    <a href="fun-page.html"><i class="fa fa-paint-brush"></i> Fun page</a>
+    <div id="topnav" class="topnav">
+        <div id="main">
+            <a class="sidebutton" href="#" onclick="openNav()"><span style="font-size:14px; cursor:pointer">&#9776;
+                    Open</a>
+            <a href="../index.html"><i class="fa fa-fw fa-home" onclick="openNav()"></i> Home</a>
+            <a href="my-projects.html"><i class="fa fa-briefcase"></i> My projects</a>
+            <a class="active" href="contact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+            <a href="about-me.html"><i class="fa fa-fw fa-user"></i> About me</a>
+            <div class="topnav-right">
+                <a href="fun-page.html"><i class="fa fa-paint-brush"></i> Fun page</a>
+            </div>
+        </div>
     </div>
-    </div> 
-</div>
 
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-   <a href="../index.html"><i class="fa fa-fw fa-home"></i> Home</a>
-   <a href="my-projects.html"><i class="fa fa-briefcase"></i> My projects</a>
-   <a class="active" href="contact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a>
-   <a href="about-me.html"><i class="fa fa-fw fa-user"></i> About me</a>
-</div>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="../index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="my-projects.html"><i class="fa fa-briefcase"></i> My projects</a>
+        <a class="active" href="contact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+        <a href="about-me.html"><i class="fa fa-fw fa-user"></i> About me</a>
+    </div>
 
     <section class="contacts-sect">
         <h2 class="contacts-heading">Contact me!</h2>
         <p style="text-align: center;"> Now you know how to find me! </p>
         <div class="links-and-form" id="links-and-form">
 
-    	    <div id="map" class="contact-info"></div>
+            <div id="map" class="contact-info"></div>
 
-            <form id="contact-form" action="#" > 
-            <div class="grid-container">
+            <!-- <form id="contact-form" action="#">
+                <div class="grid-container">
 
-                <div class="grid-item-three"></div>
-                <div id="error-name-message" class="grid-item-three"><p>.</p></div>
+                    <div class="grid-item-three"></div>
+                    <div id="error-name-message" class="grid-item-three">
+                        <p>.</p>
+                    </div>
 
-                <div class="grid-item-one">Name: </div>
-                <div class="grid-item-two">
-                    <input type="text" id="name" class="form-control" placeholder ="Enter your name." required>
+                    <div class="grid-item-one">Name: </div>
+                    <div class="grid-item-two">
+                        <input type="text" id="name" class="form-control" placeholder="Enter your name." required>
+                    </div>
+
+                    <div class="grid-item-three"></div>
+                    <div id="error-email-message" class="grid-item-three">
+                        <p>.</p>
+                    </div>
+
+                    <div class="grid-item-one">Email: </div>
+                    <div class="grid-item-two">
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email">
+                    </div>
+
+                    <div class="grid-item-three"></div>
+                    <div id="error-msg-message" class="grid-item-three">
+                        <p>.</p>
+                    </div>
+
+                    <div class="grid-item-one">Message:</div>
+                    <div class="grid-item-two">
+                        <textarea type="text" id="textarea" class="form-control" placeholder="Your message..." rows="4"
+                            required></textarea>
+                    </div>
+
                 </div>
 
-                <div class="grid-item-three"></div>
-                <div id="error-email-message" class="grid-item-three"><p>.</p></div>
-
-                <div class="grid-item-one">Email: </div>  
-                <div class="grid-item-two">
-                    <input type="email" id = "email" class="form-control" placeholder="Enter your email">
+                <div class="grid-button">
+                    <input class="buttonOne" type="submit" value="Send Message" id="submit-button"
+                        onclick="submitfunc()">
                 </div>
+            </form> -->
+            <form action="https://api.web3forms.com/submit" id="contact-form" method="POST">
 
-                <div class="grid-item-three"></div>
-                <div id="error-msg-message" class="grid-item-three"><p>.</p></div>
+                <!-- Replace with your Access Key -->
+                <input type="hidden" name="access_key" value="71a71773-21da-4427-9922-c7ab4b6df29a">
+            
+                <!-- Form Inputs. Each input must have a name="" attribute -->
+                <input type="text"  class="contactInput" name="name" placeholder="Your Name..." required>
+                <input type="email" class="contactInput" name="email" placeholder = "Your Email..." required>
+                <textarea name="message" class="contactTextArea" placeholder="Your Message..." required></textarea>
+            
+                <!-- hCaptcha Spam Protection -->
+                <div class="h-captcha" data-captcha="true"></div>
+            
+                <button class="buttonOne" type="submit" id="submit-button">Submit Form</button>
+            
+            </form>
+            <!-- Required for hCaptcha -->
+            <script src="https://web3forms.com/client/script.js" async defer></script>
 
-                <div class="grid-item-one">Message:</div>
-                <div class="grid-item-two">
-                    <textarea type="text" id="textarea" class="form-control" placeholder="Your message..."  rows="4" required></textarea>
-                </div> 
-                     
-            </div>
-
-            <div class="grid-button">
-                    <input class = "buttonOne" type="submit" value="Send Message" id="submit-button" onclick="submitfunc()">
-            </div>
-        </form>
-
-        </div>      
+        </div>
     </section>
 
 
     <footer>
-        <p style="text-align: center">I am sociable!</p>
+        <!-- <p style="text-align: center">I am sociable!</p> -->
         <div class="links">
             <div>
-                <a href="https://github.com/Nansokolov"><img class="logo" src="../images/GitHub-Mark.png" title="My GitHub account" alt="My GitHub account"></a>
-                <a href="https://github.com/Nansokolov"><img class="logo" src="../images/linkedin-icon.png" title="My LinkedIn account" alt="My LinkedIn account"></a>
-                <a href="https://facebook.com"><img class="logo" src="../images/facebook-logo.png" title="Just a Facebook" alt="Just a Facebook"></a>
+                <a href="https://github.com/Nansokolov" target="_blank"><img class="logo"
+                        src="../images/GitHub-Mark.png" title="My GitHub account" alt="My GitHub account"></a>
+                <a href="https://www.linkedin.com/in/vlad-prokhnitskyi/" target="_blank"><img class="logo"
+                        src="../images/linkedin-icon.png" title="My LinkedIn account" alt="My LinkedIn account"></a>
+                <a href="https://www.facebook.com/profile.php?id=100073277175011" target="_blank"><img class="logo"
+                        src="../images/facebook-logo.png" title="Just a Facebook" alt="Just a Facebook"></a>
             </div>
-        <div style="color: white">
             <div style="color: white">
                 Phone and email:<br>
                 <a href="tel:514-237-7188" style="color: white">+1 514-237-7188</a><br>
-                <a href="email:nansokolov@gmail.com" style="color: white">nansokolov@gmail.com</a>
-                </div>
-        <div>
-            <address>
-                You can find me in:<br>
-                Toronto, Canada
-            </address>
+                <a href="email:vlad.prokhnitskyi@outlook.com" style="color: white">vlad.prokhnitskyi@outlook.com</a>
+            </div>
+            <div>
+                <address>
+                    You can find me in:<br>
+                    Toronto, Canada
+                </address>
+            </div>
         </div>
-        </div> 
     </footer>
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7bLRfIbOZdZa6BxY2CRhMzz8C8Ee-KNI&callback=initMap"> 
-</script>
-<script src="../script.js"></script>
-<script src="../scriptForFun.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7bLRfIbOZdZa6BxY2CRhMzz8C8Ee-KNI&callback=initMap">
+    </script>
+    <script src="../script.js"></script>
+    <script src="../scriptForFun.js"></script>
 
 </body>
+
 </html>
