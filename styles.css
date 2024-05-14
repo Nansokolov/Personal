@@ -166,6 +166,11 @@ address {
 	display: grid;
 	grid-template-columns: 33% 33% 34%;
 }
+.about-description{
+	max-width: 800px; 
+	margin: auto; 
+	text-align: justify;
+}
 .about-description li{
 	padding: 10px 0;
 }
@@ -288,9 +293,11 @@ address {
 	box-sizing: border-box;
 }
 #contact-form-index{
-	padding: 30px 12%;
+	padding: 30px 35px;
 	width: 100%;
 	box-sizing: border-box;
+	max-width: 600px;
+    margin: auto;
 }
 form .contactInput{
 	box-sizing: border-box;
